@@ -1,0 +1,42 @@
+<h1>Stock (Reactive Forms)</h1>
+<hr>
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="mb-4">
+  <div class="mb-3">
+    <label class="form-label">Nombre</label>
+    <input type="text" class="form-control" formControlName="name" placeholder="Nombre del ítem">
+    @if(name?.touched && name?.invalid){
+      <div class="text-danger small">
+        @if(name?.errors?.['required']){ El nombre es obligatorio. }
+        @if(name?.errors?.['minlength']){ Debe tener al menos 2 caracteres. }
+      </div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Cantidad</label>
+    <input type="number" class="form-control" formControlName="cuantity" placeholder="0">
+    @if(cuantity?.touched && cuantity?.invalid){
+      <div class="text-danger small">
+        @if(cuantity?.errors?.['required']){ La cantidad es obligatoria. }
+        @if(cuantity?.errors?.['min']){ No puede ser negativa. }
+      </div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Existencia</label>
+    <input type="number" class="form-control" formControlName="existance" placeholder="0">
+    @if(existance?.touched && existance?.invalid){
+      <div class="text-danger small">
+        @if(existance?.errors?.['required']){ La existencia es obligatoria. }
+        @if(existance?.errors?.['min']){ No puede ser negativa. }
+      </div>
+    }
+  </div>
+
+  <button class="btn btn-primary me-2" type="submit" [disabled]="form.invalid">Agregar</button>
+  <button type="button" class="btn btn-outline-danger" (click)="clearAll()">Limpiar Inventario</button>
+</form>
+
+<stock-list [stockList]="stockService.stocklist()"></stock-list>
