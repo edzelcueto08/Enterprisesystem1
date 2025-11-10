@@ -1,0 +1,85 @@
+{
+  "equipos": [
+    {
+      "id": "1",
+      "fullname": "Club Bolívar",
+      "username": "Bolivar",
+      "password": "password123",
+      "campeonatos": 30,
+      "ciudad": "La Paz",
+      "role": "Sudamericana"
+    },
+    {
+      "id": "2",
+      "fullname": "The Strongest",
+      "username": "Tigre",
+      "password": "password123",
+      "campeonatos": 16,
+      "ciudad": "La Paz",
+      "role": "sudamericana"
+    },
+    {
+      "id": "3",
+      "fullname": "Wilstermann",
+      "username": "Wilster",
+      "password": "password123",
+      "campeonatos": 15,
+      "ciudad": "Cochabamba",
+      "role": "sudamericana"
+    },
+    {
+      "id": "4",
+      "fullname": "Blooming",
+      "username": "Blooming",
+      "password": "password123",
+      "campeonatos": 5,
+      "ciudad": "Santa Cruz",
+      "role": "sudamericana"
+    },
+    {
+      "id": "5",
+      "fullname": "Oriente Petrolero",
+      "username": "Oriente",
+      "password": "password123",
+      "campeonatos": 5,
+      "ciudad": "Santa Cruz",
+      "role": "libertadores"
+    },
+    {
+      "id": "6",
+      "fullname": "Always Ready",
+      "username": "Always",
+      "password": "password123",
+      "campeonatos": 3,
+      "ciudad": "El Alto",
+      "role": "libertadores"
+    },
+    {
+      "id": "7",
+      "fullname": "Aurora",
+      "username": "Aurora",
+      "password": "password123",
+      "campeonatos": 1,
+      "ciudad": "Cochabamba",
+      "role": "sudamericana"
+    },
+    {
+      "id": "8",
+      "fullname": "Guabirá",
+      "username": "Guabirá",
+      "password": "password123",
+      "campeonatos": 1,
+      "ciudad": "Montero",
+      "role": "sudamericana"
+    },
+    {
+      "id": "9",
+      "fullname": "Sport Boys",
+      "username": "Toro de Warnes",
+      "password": "warnes123",
+      "campeonatos": 1,
+      "ciudad": "Warnes",
+      "role": "Sudamericana"
+    }
+  ]
+}

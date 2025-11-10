@@ -1,21 +1,29 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    {
-        path:'',
-        loadComponent: ()=> import('./pages/home/home')
-    },
-    {
-        path:'stock',
-        loadComponent: ()=> import('./pages/stock/stock')
-    },
-    {
-        path:'stock-reactive',
-        loadComponent: ()=> import('./pages/stock-reactive/stock-reactive')
-    },
-    {
-        path:'**',
-        redirectTo:'' 
-    }
-
+  {
+    path: '',
+    loadComponent: () => import('./pages/home/home'),
+     
+  },
+  {
+    path: 'stock',
+    loadComponent: () => import('./pages/stock/stock'),
+    
+  },
+  {
+    path: 'stock-reactive',
+    loadComponent: () => import('./pages/stock-reactive/stock-reactive'),
+    
+  },
+  {
+    path: 'equipos',
+    loadChildren: () => import('./pages/equipos/equipo.routes'),
+    
+  },
+  
+  {
+    path: '**',
+    redirectTo: 'login'
+  }
 ];

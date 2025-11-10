@@ -1,0 +1,63 @@
+<div class="row text-center my-5" >
+    <h1>Lista de Equipos</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-outline-warning" (click)="onAddEquipo()">
+                Agregar Equipo
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col 10">
+            <div class="row">
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Equipo</th>
+                            <th scope="col">Apodo</th>
+                            <th scope="col">Campeonatos</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Copa</th>
+                            <th scope="col">ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (Equipo of equipos$ | async; track Equipo.id) {
+                            <tr>
+                                <th scope="row">{{ Equipo.id }}</th>
+                                <td>{{Equipo.fullname | titlecase}}</td>
+                                <td>{{Equipo.username}}</td>
+                                <td>{{Equipo.campeonatos}}</td>
+                                <td>{{Equipo.ciudad}}</td>
+                                <td>{{Equipo.role}}</td>
+                                <td class="d-flex gap-2">
+                                     <button class="btn btn-success" (click)="onEditequipo(Equipo.id)"
+                                        [disabled]="isDeleting() === Equipo.id">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-danger" (click)="onDeleteequipo(Equipo.id)"
+                                        [disabled]="isDeleting() === Equipo.id">
+                                        {{ isDeleting() === Equipo.id ? 'Eliminando...' : 'Eliminar' }}
+                                    </button>
+                                </td>
+                            </tr>
+                            } @empty {
+                                <tr>
+                                    <td class="text-justify-center">NO HAY EQUIPOS DE LA LIGA </td>
+                                </tr>
+                            }
+                        </tbody>
+                        </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
